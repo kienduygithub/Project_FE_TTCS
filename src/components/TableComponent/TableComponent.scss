@@ -1,0 +1,21 @@
+.ant-spin-container {
+    .button-excel-table {
+        display         : flex;
+        align-items     : center;
+        border          : none;
+        outline         : none;
+        background-color: white;
+        padding         : 4px 8px;
+        border-radius   : 4px;
+
+        &:hover {
+            background-color: rgba(22, 119, 255, 0.45) !important;
+            color           : white !important;
+        }
+
+        &:active {
+            transform       : scale(0.88);
+            transform-origin: center;
+        }
+    }
+}

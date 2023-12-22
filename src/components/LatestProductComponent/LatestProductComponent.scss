@@ -1,0 +1,326 @@
+.slider-product {
+
+    .slick-list {
+        height: 100%;
+
+        .slick-track {
+            display: flex;
+            gap    : 5px;
+
+            .slick-slide {}
+        }
+    }
+
+    display        : flex;
+    align-items    : center;
+    height         : 320px;
+    justify-content: flex-start;
+    gap            : 10px;
+
+    .card-product {
+        width           : calc(25% - 10px);
+        height          : 280px;
+        background-color: white;
+        box-sizing      : border-box;
+        box-shadow      : rgba(0, 0, 0, 0.16) 0px 1px 4px;
+        border-radius   : 4px;
+
+        &:hover {
+            .card-header .card-image {
+                transform: translateY(-5px);
+            }
+
+            .card-content .card-name {
+                color: #1677ff;
+            }
+        }
+
+        .card-header {
+            height         : 180px;
+            padding        : 8px 16px;
+            display        : flex;
+            align-items    : center;
+            justify-content: center;
+            border-radius  : 4px;
+            position       : relative;
+
+            .card-label {
+                position        : absolute;
+                top             : 0;
+                left            : 0;
+                font-size       : 10px;
+                background-image: linear-gradient(90deg, #0072ff 0%, #00d4ff 100%);
+                padding         : 2px 5px;
+                box-sizing      : border-box;
+                overflow        : hidden;
+                border-radius   : 4px;
+                color           : white;
+                display         : flex;
+                justify-content : space-between;
+                align-items     : center;
+                gap             : 2px;
+
+                .lable-icon {}
+            }
+
+            .card-image {
+                width     : 100%;
+                height    : 100%;
+                object-fit: cover;
+                transition: transform 0.25s ease-in-out;
+            }
+        }
+
+        .card-content {
+            margin-top: auto;
+            padding   : 4px 16px;
+
+            .card-name {
+                font-size  : 11px;
+                font-weight: 400;
+                transition : color 0.25s ease-in-out;
+            }
+
+            .card-report {
+                font-size  : 11px;
+                color      : #787889;
+                display    : flex;
+                align-items: center;
+                margin     : 7px 0 0;
+
+                .rate {
+                    display    : flex;
+                    align-items: center;
+
+                    .star-text {
+                        font-size: 10px;
+                        position : relative;
+
+                        &::before {
+                            content    : "";
+                            border-left: 1px solid #ccc;
+                            position   : absolute;
+                            top        : 2px;
+                            left       : 18px;
+                            height     : 10px;
+                        }
+                    }
+
+                    .star-icon {
+                        text-align  : center;
+                        font-size   : 11px;
+                        color       : yellow;
+                        margin-top  : 1px;
+                        margin-right: 5px;
+                    }
+
+                }
+
+                .quality {
+                    font-size  : 8px;
+                    line-height: 8px;
+                    color      : rgb(120, 120, 120);
+                }
+
+            }
+
+            .card-price {
+                .price-text {
+                    color       : #ff424e;
+                    font-size   : 16px;
+                    font-weight : 500;
+                    margin-right: 5px;
+                }
+
+                .price-discount {
+                    font-size: 10px;
+                    color    : rgb(255, 66, 78);
+                }
+            }
+        }
+    }
+
+    .slick-next:before {
+        content: "→";
+    }
+
+    .slick-prev:before {
+        content: "←";
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+        font-family            : "slick";
+        font-size              : 20px;
+        line-height            : 1;
+        opacity                : 0.9;
+        color                  : white;
+        -webkit-font-smoothing : antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    button.slick-arrow.slick-next {
+        // background-color: red;
+        position: absolute;
+        right   : 10px;
+        top     : 130px;
+
+        &:hover {
+            &::before {
+                color: rgba(20, 118, 255, 0.55)
+            }
+        }
+
+        &:active {
+            &::before {
+                font-size: 48px;
+            }
+        }
+
+        &::before {
+            font-size   : 50px;
+            // color    : red
+        }
+
+    }
+
+    button.slick-arrow.slick-prev {
+        // background-color: red;
+        position: absolute;
+        left    : -20px;
+        top     : 140px;
+        z-index : 999;
+        width   : 50px;
+        height  : 40px;
+
+        &:hover {
+            &::before {
+                color: rgba(20, 118, 255, 0.55)
+            }
+        }
+
+        &:active {
+            &::before {
+                font-size: 48px;
+            }
+        }
+
+        &::before {
+            font-size: 50px;
+        }
+    }
+
+    .slick-dots {
+        position : absolute;
+        left     : 50%;
+        top      : 90%;
+        transform: translate(-50%, -50%);
+
+        li button:before {
+            color: rgba(0, 0, 0, 0.9);
+        }
+
+        li.slick-active button:before {
+            color: rgba(23, 120, 255, 0.8);
+        }
+    }
+}
+
+// .latest-products {
+//     display        : flex;
+//     align-items    : center;
+//     height         : 320px;
+//     justify-content: flex-start;
+//     gap            : 10px;
+
+//     .card-product {
+//         width           : calc(25% - 10px);
+//         height          : 280px;
+//         background-color: white;
+//         box-sizing      : border-box;
+//         box-shadow      : rgba(0, 0, 0, 0.16) 0px 1px 4px;
+//         border-radius   : 4px;
+
+//         .card-header {
+//             height         : 180px;
+//             padding        : 4px 16px;
+//             display        : flex;
+//             align-items    : center;
+//             justify-content: center;
+//             border-radius  : 4px;
+
+//             .card-image {
+//                 width     : 100%;
+//                 height    : 100%;
+//                 object-fit: cover;
+//             }
+//         }
+
+//         .card-content {
+//             margin-top: auto;
+//             padding   : 4px 16px;
+
+//             .card-name {
+//                 font-size  : 11px;
+//                 font-weight: 400;
+//             }
+
+//             .card-report {
+//                 font-size  : 11px;
+//                 color      : #787889;
+//                 display    : flex;
+//                 align-items: center;
+//                 margin     : 7px 0 0;
+
+//                 .rate {
+//                     display    : flex;
+//                     align-items: center;
+
+//                     .star-text {
+//                         font-size: 10px;
+//                         position : relative;
+
+//                         &::before {
+//                             content    : "";
+//                             border-left: 1px solid #ccc;
+//                             position   : absolute;
+//                             top        : 2px;
+//                             left       : 18px;
+//                             height     : 10px;
+//                         }
+//                     }
+
+//                     .star-icon {
+//                         text-align  : center;
+//                         font-size   : 11px;
+//                         color       : yellow;
+//                         margin-top  : 1px;
+//                         margin-right: 5px;
+//                     }
+
+//                 }
+
+//                 .quality {
+//                     font-size  : 8px;
+//                     line-height: 8px;
+//                     color      : rgb(120, 120, 120);
+//                 }
+
+//             }
+
+//             .card-price {
+//                 .price-text {
+//                     color       : #ff424e;
+//                     font-size   : 16px;
+//                     font-weight : 500;
+//                     margin-right: 5px;
+//                 }
+
+//                 .price-discount {
+//                     font-size: 10px;
+//                     color    : rgb(255, 66, 78);
+//                 }
+//             }
+//         }
+//     }
+// }

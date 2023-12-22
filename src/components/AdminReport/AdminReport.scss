@@ -1,0 +1,70 @@
+.report-container {
+    h1 {
+        margin   : 0;
+        font-size: 14px;
+    }
+
+    .report-chart {
+        margin-top: 30px;
+
+        .quarter.quarter-up,
+        .quarter.quarter-down {
+            display        : flex;
+            justify-content: space-between;
+
+            .quarter-left {
+                display       : flex;
+                flex-direction: column;
+                width         : 50%;
+
+                .chart {
+                    display        : flex;
+                    align-items    : center;
+                    justify-content: center;
+
+                    div {
+                        .ant-spin-container {
+                            .button-export-excel-report {
+                                &:hover {
+                                    background-color: rgba(22, 119, 255, 0.45) !important;
+                                    color           : white !important;
+                                }
+
+                                &:active {
+                                    font-size: 11px !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .quarter-right {
+                display       : flex;
+                flex-direction: column;
+                flex          : 1;
+
+                .chart {
+                    display        : flex;
+                    align-items    : center;
+                    justify-content: center;
+
+                    div {
+                        .ant-spin-container {
+                            .button-export-excel-report {
+                                &:hover {
+                                    background-color: rgba(22, 119, 255, 0.45) !important;
+                                    color           : white !important;
+                                }
+
+                                &:active {
+                                    font-size: 11px !important;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

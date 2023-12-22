@@ -1,0 +1,34 @@
+.header-search {
+    display: flex;
+
+    .search-input {
+        // border          : 2px solid #1677ff;
+        // outline: none;
+        background-color: #fff;
+        color           : #0d5cb6;
+        border-radius   : 5px 0 0 5px;
+        border-right    : transparent;
+
+        :focus {
+            border: 1px solid #1677ff;
+        }
+
+    }
+
+    input:focus::placeholder {
+        color: transparent;
+    }
+
+    button.search-button {
+        color           : white;
+        background-color: #0d5cb6;
+        border-radius   : 0 5px 5px 0;
+        border-left     : transparent;
+    }
+
+    button:hover {
+        background-color: #0d5cb6;
+    }
+}
+
+// color: #234b84;

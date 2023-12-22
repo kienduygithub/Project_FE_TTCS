@@ -1,0 +1,78 @@
+.order-background {
+    background-color   : #f5f5fa;
+    // width           : 100%;
+    height             : 100%;
+    padding            : 0 120px;
+    box-sizing         : border-box;
+
+    h3.cart-order-title {
+        padding    : 0;
+        padding-top: 15px;
+    }
+
+    .list-order {
+        padding         : 20px;
+        display         : flex;
+        flex-direction  : column;
+        gap             : 20px;
+        padding-top     : 20px;
+        background-color: #fff;
+
+        .item-order {
+            border       : 1px solid #c1abab;
+            border-radius: 10px;
+            padding      : 10px;
+            box-shadow   : rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+
+            .status {
+                display       : flex;
+                align-items   : flex-start;
+                width         : 100%;
+                margin-bottom : 10px;
+                padding-bottom: 10px;
+                border-bottom : 1px solid rgb(235, 235, 240);
+                flex-direction: column;
+            }
+
+            .header-item {
+                display       : flex;
+                align-items   : center;
+                padding-bottom: 10px;
+
+                .image-item {
+                    width     : 55px;
+                    height    : 55px;
+                    object-fit: cover;
+                    border    : 1px solid rgb(238, 238, 238);
+                    padding   : 2px;
+                }
+
+                .name-item {
+                    width        : 30%;
+                    overflow     : hidden;
+                    text-overflow: ellipsis;
+                    white-space  : nowrap;
+                    margin-left  : 10px;
+                }
+
+                .price-item {
+                    margin-left: auto;
+                    font-size  : 13px;
+                    white-space: nowrap;
+                    color      : #242424;
+                }
+            }
+
+            .footer-item {
+                display       : flex;
+                flex-direction: column;
+                gap           : 10px;
+                border-top    : 1px solid rgb(235, 235, 240);
+                width         : 100%;
+                align-items   : flex-end;
+                padding-top   : 10px;
+            }
+        }
+
+    }
+}

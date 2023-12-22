@@ -1,0 +1,93 @@
+.order-background {
+    background-color: #f5f5fa;
+    width           : 100%;
+    height          : 100vh;
+
+    h3.cart-order-title {
+        padding    : 0 120px;
+        margin-top : 0;
+        padding-top: 10px;
+    }
+
+    .payment-container {
+        display        : flex;
+        padding        : 0 120px;
+        justify-content: center;
+        align-items    : flex-start;
+        gap            : 20px;
+
+        .container-left {
+            width           : 65%;
+            background-color: #fff;
+            padding-bottom  : 5px;
+            padding-left    : 5px;
+
+            .method-info {
+                margin-top     : 6px;
+                background     : rgb(240, 248, 255);
+                border         : 1px solid rgb(194, 225, 255);
+                width          : 80%;
+                border-radius  : 4px;
+                height         : 100px;
+                padding        : 16px;
+                font-weight    : normal;
+                display        : flex;
+                flex-direction : column;
+                gap            : 10px;
+                justify-content: center;
+
+                span.text-info {
+                    font-size  : 12px;
+                    color      : #000;
+                    font-weight: bold
+                }
+            }
+        }
+
+        .container-right {
+            width            : 30%;
+            // margin-left   : 20px;
+            display          : flex;
+            flex-direction   : column;
+            align-items      : center;
+            gap              : 10px;
+
+            .bill {
+                width: 100%;
+
+                .bill-info {
+                    // padding                : 17px 20px;
+                    border-bottom          : 1px solid #f5f5f5;
+                    background             : #fff;
+                    border-top-right-radius: 6px;
+                    border-top-left-radius : 6px;
+                    width                  : 100%;
+                    box-sizing             : border-box;
+                    padding                : 15px 10px;
+
+                    .change-address {
+                        transition: text-decoration 0.25s ease-in-out, font-size 0.25s ease-in-out;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+
+                        &:active {
+                            font-size: 13px;
+                        }
+                    }
+                }
+
+                .bill-total {
+                    display                   : flex;
+                    align-items               : flex-start;
+                    justify-content           : space-between;
+                    padding                   : 17px 20px;
+                    background                : #fff;
+                    border-bottom-right-radius: 6px;
+                    border-bottom-left-radius : 6px;
+                }
+            }
+        }
+    }
+}

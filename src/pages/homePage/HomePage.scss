@@ -1,0 +1,107 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&family=Lobster&family=Lobster+Two:ital,wght@0,400;0,700;1,400;1,700&family=Whisper&display=swap');
+
+.homePage {
+
+
+    .home-TypeProduct {
+        display           : flex;
+        align-items       : center;
+        justify-content   : flex-start;
+        gap               : 24px;
+        // border-bottom  : 1px solid red;
+        height            : 44px;
+
+        .type-product-container {
+            cursor: pointer;
+
+            &::after {
+                content : "";
+                display : block;
+                position: absolute;
+                width   : 25px;
+                height  : 100px;
+                top     : -4px;
+                right   : -15px;
+            }
+
+            &:hover {
+                .type-product {
+                    display: flex !important;
+                }
+            }
+
+            .type-product {
+                display         : flex;
+                align-items     : flex-start;
+                flex-direction  : column;
+                background-color: #fff;
+                width           : 100%;
+                gap             : 5px;
+            }
+        }
+    }
+
+    .container {
+        .header-latest {
+            text-align : center;
+            user-select: none;
+            outline    : none;
+            cursor     : pointer;
+            font-size  : 30px;
+            text-align : left;
+            transition-property: opacity,
+                transform;
+            font-weight        : 600;
+            font-style         : normal;
+            font-stretch       : normal;
+            font-optical-sizing: auto;
+            opacity            : 1;
+            font-family        : 'Whisper',
+                cursive;
+            line-height        : initial;
+            transition-duration: 350ms;
+        }
+
+        .header-products {
+            text-align : center;
+            user-select: none;
+            outline    : none;
+            cursor     : pointer;
+            font-size  : 30px;
+            text-align : left;
+            transition-property: opacity,
+                transform;
+            font-weight        : 600;
+            font-style         : normal;
+            font-stretch       : normal;
+            font-optical-sizing: auto;
+            opacity            : 1;
+            font-family        : 'Whisper',
+                cursive;
+            line-height        : initial;
+            transition-duration: 350ms;
+        }
+
+        .button-more-container {
+            display        : flex;
+            justify-content: center;
+
+            .button-more {
+                transition: background-color 0.3s linear;
+
+                span {
+                    transition: color 0.3s linear;
+                }
+            }
+
+            .button-more:hover {
+                background-color: #0d5cb6;
+
+                >span {
+                    color: white
+                }
+            }
+        }
+
+    }
+}

@@ -1,0 +1,186 @@
+.order-background {
+    background-color: #f5f5fa;
+    width           : 100%;
+    height          : 100vh;
+
+    h3.cart-order-title {
+        padding    : 0 120px;
+        margin-top : 0;
+        padding-top: 10px;
+    }
+
+    .order-container {
+        display: flex;
+        padding: 0 120px;
+        gap    : 20px;
+
+        .container-left {
+            width: 60%;
+
+            // HEADER-LEFT
+            .header-left-delivery {
+                background   : #fff;
+                padding      : 9px 16px;
+                border-radius: 4px;
+                display      : flex;
+                align-items  : center;
+                margin-bottom: 4px;
+
+                span {
+                    color      : rgb(36, 36, 36);
+                    font-weight: 400;
+                    font-size  : 13px;
+                }
+            }
+
+            .header-left {
+                background   : #fff;
+                padding      : 9px 16px;
+                border-radius: 4px;
+                display      : flex;
+                align-items  : center;
+
+                span {
+                    color      : rgb(36, 36, 36);
+                    font-weight: 400;
+                    font-size  : 13px;
+                }
+
+                span.sum-quality-product {
+                    display    : inline-block;
+                    width      : 35%;
+                    display    : flex;
+                    align-items: center;
+                    gap        : 5px;
+                }
+
+                div.col-bill {
+                    display        : flex;
+                    align-items    : center;
+                    justify-content: space-between;
+                    flex           : 1;
+
+                }
+            }
+
+            // LIST-ORDER
+            .list-orders {
+
+                .item-order {
+                    display    : flex;
+                    align-items: center;
+                    padding    : 9px 16px;
+                    background : #fff;
+                    margin-top : 12px;
+
+                    .item-content {
+                        width      : 35%;
+                        display    : flex;
+                        align-items: center;
+                        gap        : 10px;
+
+                        img {
+                            width     : 60px;
+                            height    : 60px;
+                            object-fit: cover;
+                        }
+
+                        div.name-text {
+                            width        : 70%;
+                            overflow     : hidden;
+                            white-space  : nowrap;
+                            text-overflow: ellipsis;
+                        }
+                    }
+
+                    .item-bill {
+                        display        : flex;
+                        justify-content: space-between;
+                        align-items    : center;
+                        flex           : 1;
+
+                        .price {}
+
+                        .price-discount {
+                            color          : #999;
+                            font-size      : 12px;
+                            text-decoration: line-through;
+                            margin-left    : 4px;
+                        }
+
+                        .count-item {
+                            display      : flex;
+                            align-items  : center;
+                            width        : 69px;
+                            border       : 1px solid #ccc;
+                            border-radius: 4px;
+
+                            div.input-count {
+                                width        : 24px;
+                                border-radius: 0;
+                                border-top   : none;
+                                border-bottom: none;
+                                outline      : none;
+
+                                .ant-input-number-handler-wrap {
+                                    display: none !important;
+                                }
+                            }
+                        }
+
+                        .total-price-text {
+                            color      : rgb(255, 66, 78);
+                            font-size  : 13px;
+                            font-weight: 500;
+                        }
+                    }
+                }
+            }
+        }
+
+        .container-right {
+            width            : 40%;
+            // margin-left   : 20px;
+            display          : flex;
+            flex-direction   : column;
+            align-items      : center;
+            gap              : 10px;
+
+            .bill {
+                width        : 100%;
+                border-radius: 4px;
+
+                .bill-info {
+                    // padding                : 17px 20px;
+                    border-bottom: 1px solid #f5f5f5;
+                    background   : #fff;
+                    width        : 100%;
+                    box-sizing   : border-box;
+                    padding      : 15px 10px;
+
+                    .change-address {
+                        transition : text-decoration 0.25s ease-in-out, font-size 0.25s ease-in-out;
+                        user-select: none;
+                        cursor     : pointer;
+
+                        &:hover {
+                            text-decoration: underline;
+                        }
+
+                        &:active {
+                            font-size: 13px;
+                        }
+                    }
+                }
+
+                .bill-total {
+                    display        : flex;
+                    align-items    : flex-start;
+                    justify-content: space-between;
+                    padding        : 17px 20px;
+                    background     : #fff;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,178 @@
+// .profile-page-container {
+//     width     : 700px;
+//     margin    : 0 auto;
+//     margin-top: 10px;
+
+//     h1 {
+//         font-size: 18px;
+//         color    : #000;
+//         margin   : 4px 0;
+//     }
+
+//     .content-profile {
+//         display       : flex;
+//         flex-direction: column;
+//         border        : 1px solid #ccc;
+//         width         : 70%;
+//         margin        : 0 auto;
+//         padding       : 20px;
+//         border-radius : 10px;
+//         gap           : 20px;
+
+//         .form-field {
+//             display    : flex;
+//             align-items: center;
+//             gap        : 30px;
+
+//             .form-label {
+//                 color      : #000;
+//                 font-size  : 16px;
+//                 line-height: 16px;
+//                 font-weight: 600;
+//                 width      : 120px;
+//             }
+
+//             .form-input {
+//                 width: 300px;
+//             }
+
+//             button {
+//                 margin-left: auto;
+//             }
+
+//             .ant-upload-wrapper {
+//                 .ant-upload-list {
+//                     display: none;
+//                 }
+//             }
+//         }
+//     }
+// }
+.profile-page-container {
+    height       : 100%;
+    margin-bottom: 50px;
+
+    h1 {
+        font-size  : 20px;
+        line-height: 32px;
+        font-weight: 300;
+        margin     : 4px 0px 12px;
+    }
+
+    .content-profile {
+        background-color   : white;
+        display            : flex;
+        justify-content    : space-between;
+        border-radius      : 8px;
+        // margin-bottom   : 100px;
+
+        .content-left {
+            width  : 55%;
+            padding: 16px 24px 16px 16px;
+
+            .info-title {
+                font-size  : 16px;
+                line-height: 24px;
+                font-weight: 400;
+                color      : #64646d;
+            }
+
+            div.info-left {
+                margin-top      : 16px;
+                border-radius   : 4px;
+                background-color: white;
+
+                .info-user {
+                    display: flex;
+
+                    .info-avatar {
+                        width: 30%;
+
+                        .ant-upload-wrapper {
+                            .ant-upload-list {
+                                display: none !important;
+                            }
+                        }
+                    }
+
+                    .info-name {
+                        flex              : 1;
+                        display           : flex;
+                        // justify-content: space-between;
+                        flex-direction    : column;
+                        gap               : 34px;
+
+                        .user-id {
+                            display    : flex;
+                            align-items: center;
+
+                            label {
+                                width    : 30%;
+                                min-width: 120px;
+                            }
+                        }
+
+                        .name-user {
+                            display    : flex;
+                            align-items: center;
+
+                            label {
+                                width    : 30%;
+                                min-width: 120px;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .content-vertical {
+            border-left: 1px solid rgb(235, 235, 240);
+            margin     : 16px 0;
+        }
+
+        .content-right {
+            flex          : 1;
+            padding       : 16px 24px 16px 16px;
+            display       : flex;
+            flex-direction: column;
+
+            .info-title {
+                font-size  : 14px;
+                line-height: 24px;
+                font-weight: 400;
+                color      : #64646d;
+            }
+
+            .info-item {
+                margin-bottom: 16px;
+
+                .list-item {
+                    display        : flex;
+                    justify-content: space-between;
+                    align-items    : center;
+                    padding        : 19px 0;
+                    width          : 100%;
+
+                    .info {
+                        display        : flex;
+                        flex-wrap      : nowrap;
+                        justify-content: space-between;
+                        gap            : 8px;
+
+                        .details {
+                            display       : flex;
+                            flex-direction: column;
+                        }
+                    }
+
+                    .status {
+                        flex           : 1 1 0%;
+                        display        : flex;
+                        justify-content: space-between;
+                    }
+                }
+            }
+        }
+    }
+}

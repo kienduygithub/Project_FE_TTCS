@@ -1,0 +1,100 @@
+.footer-component {
+    padding         : 0 120px;
+    background-color: white;
+    height          : 200px;
+    box-sizing      : border-box;
+    padding-top     : 30px;
+    display         : flex;
+    justify-content : space-around;
+    gap             : 10px;
+
+    .footer-col {
+        display       : flex;
+        flex-direction: column;
+        width         : calc(20% - 10px);
+
+        h4 {
+            font-size    : 14px;
+            line-height  : 24px;
+            font-weight  : 500;
+            color        : #38383d;
+            margin-bottom: 12px;
+            margin-top   : 0px;
+            user-select  : none;
+        }
+
+        p.hotline {
+            font-size    : 10px;
+            margin       : 0;
+            margin-bottom: 8px;
+            color        : #808089;
+            display      : block;
+
+            a {
+                color      : rgb(56, 56, 61);
+                font-weight: 500;
+
+                span {
+                    display: inline;
+                }
+
+                &:hover {
+                    span {
+                        text-decoration: underline;
+                    }
+                }
+            }
+        }
+
+        span {
+            font-size    : 10px;
+            display      : block;
+            margin-bottom: 8px;
+            color        : #808089;
+            cursor       : pointer;
+            user-select  : none;
+            transition   : all 0.4s linear;
+            box-sizing   : border-box;
+            height       : 10px;
+
+            &:hover {
+                color: #1677ff;
+            }
+
+            &:active {
+                font-size: 8px;
+            }
+        }
+
+        .social-connect {
+            display        : flex;
+            align-items    : center;
+            justify-content: flex-start;
+            gap            : 5px;
+
+            .social-icon {
+                color          : white;
+                width          : 25px;
+                height         : 25px;
+                border-radius  : 50%;
+                display        : flex;
+                align-items    : center;
+                justify-content: center;
+                cursor         : pointer;
+            }
+
+            .social-icon.facebook {
+                background-color: #3b5998;
+            }
+
+            .social-icon.youtube {
+                background-color: red;
+            }
+
+            .social-icon.google {
+                // color           : #1677ff !important;
+                background-color: rgb(130, 116, 116);
+            }
+        }
+    }
+}

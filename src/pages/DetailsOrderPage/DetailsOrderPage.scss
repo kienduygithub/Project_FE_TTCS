@@ -1,0 +1,167 @@
+.order-background {
+    width           : 100%;
+    height          : 100%;
+    background-color: #f5f5fa;
+    padding         : 0 120px;
+
+    h4.order-details-text {
+        margin        : 0;
+        padding       : 0;
+        padding-top   : 10px;
+        padding-bottom: 10px;
+    }
+
+    .header-user {
+        display        : flex;
+        align-items    : center;
+        justify-content: space-between;
+        gap            : 15px;
+
+        .info-user {
+            width: calc(33.33% - 15px);
+
+            span {
+                color         : #242424;
+                font-size     : 13px;
+                text-transform: uppercase;
+                margin-bottom : 15px;
+            }
+
+            .content-info {
+                height             : 118px;
+                // width           : 100%;
+                background-color   : #fff;
+                border-radius      : 8px;
+                padding            : 10px;
+
+                .name-info {
+                    font-size     : 13px;
+                    color         : #242424;
+                    font-weight   : bold;
+                    text-transform: uppercase;
+                }
+
+                .address-info,
+                .phone-info,
+                .delivery-info,
+                .delivery-fee,
+                .payment-info {
+                    color     : rgba(0, 0, 0, 0.65);
+                    font-size : 13px;
+                    margin-top: 8px;
+                }
+
+                .name-delivery {
+                    color         : #ea8500;
+                    font-weight   : bold;
+                    text-transform: uppercase;
+                }
+
+                .status-payment {
+                    margin-top: 8px;
+                    color     : #ea8500;
+                }
+            }
+        }
+    }
+
+    .style-content {
+        display       : flex;
+        flex-direction: column;
+        gap           : 10px;
+        margin-top    : 20px;
+        width         : 100%;
+        border        : 1px solid black;
+        box-sizing    : border-box;
+        padding       : 10px;
+        margin-bottom : 10px;
+        border-radius : 2px;
+
+        .style-content-header {
+            display        : flex;
+            align-items    : center;
+            justify-content: space-between;
+            border-bottom  : 1px solid black;
+
+            .item-label {
+                flex           : 1;
+                display        : flex;
+                justify-content: flex-start;
+                align-items    : center;
+                gap            : 15px;
+
+                span {
+                    display   : inline-block;
+                    width     : calc(33.33% - 15px);
+                    text-align: center;
+                }
+            }
+        }
+
+        .item-product {
+            display        : flex;
+            align-items    : center;
+            justify-content: space-between;
+
+
+            .name-product {
+                width      : 45%;
+                display    : flex;
+                align-items: center;
+                gap        : 20px;
+
+                .item-product-image {
+                    width        : 60px;
+                    height       : 60px;
+                    object-fit   : cover;
+                    padding      : 5px;
+                    border       : 1px solid #ccc;
+                    border-radius: 2px;
+                }
+
+                .item-product-phone {
+                    text-overflow: ellipsis;
+                    overflow     : hidden;
+                    font-size    : 13px;
+                    color        : #242424;
+                }
+            }
+
+            .value-product {
+                display        : flex;
+                flex           : 1;
+                align-items    : center;
+                justify-content: flex-start;
+                gap            : 15px;
+
+                span {
+                    display   : inline-block;
+                    width     : calc(33.33% - 15px);
+                    text-align: center;
+                }
+            }
+        }
+
+        .order-all-price {
+            display        : flex;
+            align-items    : center;
+            justify-content: flex-start;
+            width          : 55%;
+            margin-left    : auto;
+            gap            : 15px;
+
+            .all-price {
+                display        : flex;
+                align-items    : center;
+                flex-direction : column;
+                justify-content: center;
+                width          : calc(33.33% - 15px);
+
+                .item {
+                    color      : red;
+                    font-weight: bold;
+                }
+            }
+        }
+    }
+}

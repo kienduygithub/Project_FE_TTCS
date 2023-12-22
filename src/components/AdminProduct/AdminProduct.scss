@@ -1,0 +1,45 @@
+.container {
+    h1 {
+        color    : #000;
+        font-size: 14px;
+    }
+
+    .button {
+        .btn-plus {
+            height       : 150px;
+            width        : 150px;
+            border-radius: 6px;
+            border       : 1px dashed #ccc;
+
+            .btn-plus-icon {
+                font-size: 60px;
+            }
+        }
+    }
+
+    .table-container {
+        margin-top: 20px;
+    }
+}
+
+.ant-modal-root {
+    .ant-modal-mask {}
+
+    .ant-modal-wrap {
+        .ant-modal {
+            .ant-modal-content {
+                .ant-modal-close {
+                    span.ant-modal-close-x {}
+                }
+
+                .ant-modal-header {}
+
+                .ant-modal-body {
+                    .ant-form {
+                        .ant-form-item {}
+                    }
+                }
+            }
+        }
+    }
+}

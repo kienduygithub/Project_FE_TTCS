@@ -1,0 +1,116 @@
+.slider {
+    position        : absolute;
+    top             : 50%;
+    left            : 50%;
+    transform       : translate(-50%, 65px);
+    width           : 80%;
+    // height       : 300px;
+    border-radius   : 8px;
+
+    .slick-list {
+        height: 100%;
+
+        .slick-track {
+            display: flex;
+            gap    : 5px;
+
+            .slick-slide {
+                border-radius: 8px;
+                object-fit   : cover;
+                overflow     : hidden;
+
+                div .ant-image {
+                    border-radius: 8px;
+                    overflow     : hidden;
+
+                    img {
+                        border-radius: 8px;
+                        overflow     : hidden;
+                    }
+                }
+            }
+        }
+    }
+
+    .slick-next:before {
+        content: "→";
+    }
+
+    .slick-prev:before {
+        content: "←";
+    }
+
+    .slick-prev:before,
+    .slick-next:before {
+        font-family            : "slick";
+        font-size              : 20px;
+        line-height            : 1;
+        opacity                : 0.9;
+        color                  : white;
+        -webkit-font-smoothing : antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+
+    button.slick-arrow.slick-next {
+        // background-color: red;
+        position: absolute;
+        right   : -8px;
+        top     : 58px;
+
+        &:hover {
+            &::before {
+                color: rgba(20, 118, 255, 0.55)
+            }
+        }
+
+        &:active {
+            &::before {
+                font-size: 25px;
+            }
+        }
+
+        &::before {
+            font-size: 28px;
+        }
+    }
+
+    button.slick-arrow.slick-prev {
+        position: absolute;
+        left    : -25px;
+        top     : 58px;
+        z-index : 999;
+        width   : 50px;
+        height  : 40px;
+
+        &:hover {
+            &::before {
+                color: rgba(20, 118, 255, 0.55)
+            }
+        }
+
+        &:active {
+            &::before {
+                font-size: 25px;
+            }
+        }
+
+        &::before {
+            font-size: 28px;
+        }
+    }
+
+    .slick-dots {
+        position : absolute;
+        left     : 50%;
+        top      : 90%;
+        transform: translate(-50%, -50%);
+
+        li button:before {
+            color: rgba(0, 0, 0, 0.9);
+        }
+
+        li.slick-active button:before {
+            color: rgba(23, 120, 255, 0.8);
+        }
+    }
+}
