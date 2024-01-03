@@ -1,72 +1,113 @@
 .report-container {
+    height: calc(100vh);
 
-    h1 {
-        margin   : 0;
-        font-size: 14px;
+    .report-header {
+        display    : flex;
+        align-items: center;
+        gap        : 10px;
+
+        h1 {
+            margin   : 0;
+            font-size: 18px;
+        }
     }
 
     .report-chart {
-        margin-top: 30px;
-        height    : calc(100vh - 158px);
+        margin-top     : 30px;
+        height         : calc(100vh - 80px);
+        display        : flex;
+        flex-direction : column;
+        justify-content: center;
 
-        .quarter.quarter-up,
-        .quarter.quarter-down {
+        .quarter.quarter-up {
+            // width : 1150px;
+            // height: 200px;
             display        : flex;
-            justify-content: space-between;
+            align-items    : center;
+            justify-content: center;
+            box-sizing     : border-box;
+            padding-top    : 40px;
 
-            .quarter-left {
-                display       : flex;
-                flex-direction: column;
-                width         : 50%;
+            .quarter-right,
+            .quarter-left,
+            .quarter-center {
+                display        : flex;
+                align-items    : center;
+                justify-content: center;
+                box-sizing     : border-box;
+                padding-right  : 80px;
 
-                .chart {
+                .quarter-sum {
+                    // --border-width     : 3px;
+                    position       : relative;
+                    width          : 150px;
+                    height         : 150px;
+                    border-radius  : 50%;
                     display        : flex;
                     align-items    : center;
                     justify-content: center;
+                    overflow       : hidden;
+                    background     : linear-gradient(100deg, #000b449e, #54aa6359);
+                    color          : white;
+                    padding        : 10px;
 
-                    div {
-                        .ant-spin-container {
-                            .button-export-excel-report {
-                                &:hover {
-                                    background-color: rgba(22, 119, 255, 0.45) !important;
-                                    color           : white !important;
-                                }
+                    .border {
+                        text-align    : center;
+                        font-size     : 15px;
+                        text-transform: uppercase;
 
-                                &:active {
-                                    font-size: 11px !important;
-                                }
-                            }
+                        h4 {
+                            margin: 0;
                         }
-                    }
-                }
-            }
 
-            .quarter-right {
-                display       : flex;
-                flex-direction: column;
-                flex          : 1;
+                        &::after {
+                            position: absolute;
+                            content : "";
+                            top     : calc(-1 * var(3px));
+                            left    : calc(-1 * var(3px));
+                            z-index : -1;
+                            width   : calc(100% + var(3px) * 2);
+                            height  : calc(100% + var(3px) * 2);
+                            background: linear-gradient(60deg,
+                                    hsl(224, 85%, 66%),
+                                    hsl(269, 85%, 66%),
+                                    hsl(314, 85%, 66%),
+                                    hsl(359, 85%, 66%),
+                                    hsl(44, 85%, 66%),
+                                    hsl(89, 85%, 66%),
+                                    hsl(134, 85%, 66%),
+                                    hsl(179, 85%, 66%));
+                            background-size    : 300% 300%;
+                            background-position: 0 50%;
+                            border-radius      : calc(2 * var(3px));
+                            animation          : moveGradient 4s alternate infinite;
 
-                .chart {
-                    display        : flex;
-                    align-items    : center;
-                    justify-content: center;
-
-                    div {
-                        .ant-spin-container {
-                            .button-export-excel-report {
-                                &:hover {
-                                    background-color: rgba(22, 119, 255, 0.45) !important;
-                                    color           : white !important;
-                                }
-
-                                &:active {
-                                    font-size: 11px !important;
-                                }
-                            }
                         }
                     }
                 }
             }
         }
+
+        .quarter.quarter-down {
+            flex          : 1;
+            display       : flex;
+            flex-direction: column;
+            margin-top    : auto;
+
+            h4 {
+                margin   : 0;
+                font-size: 14px;
+                position : absolute;
+                top      : -24px;
+                left     : 48px;
+                z-index  : 99;
+            }
+        }
+    }
+}
+
+@keyframes moveGradient {
+    50% {
+        background-position: 100% 50%;
     }
 }

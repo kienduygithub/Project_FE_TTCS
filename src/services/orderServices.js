@@ -78,3 +78,7 @@ export const getQuarter = async (year) => {
     const res = await axiosJWT.get(`${process.env.REACT_APP_API_URL}/order-item/get-quarter?year=${year}`);
     return res.data;
 }
+export const getBySelectedQuarter = async ({ quarter, year }) => {
+    const res = await axiosJWT.get(`${process.env.REACT_APP_API_URL}/order-item/get-by-selected-quarter?quarter=${quarter}&year=${year}`);
+    return res.data;
+}

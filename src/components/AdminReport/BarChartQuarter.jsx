@@ -1,16 +1,25 @@
 import React, { PureComponent, memo, useEffect, useMemo, useState } from 'react';
-import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip } from 'recharts';
+import { BarChart, Bar, XAxis, YAxis, CartesianGrid, Tooltip, LabelList } from 'recharts';
 import LoadingComponent from '../LoadingComponent/LoadingComponet';
 import ButtonComponent from '../ButtonComponent/ButtonComponent'
 import * as XLSX from 'xlsx';
 import { VerticalAlignBottomOutlined } from '@ant-design/icons';
-const BarChartQuarter = ({ dataBar = [], dataTypes = []}) => {
+const BarChartQuarter = (props) => {
+    const { dataBar = [], dataTypes = [] } = props;
     const [dataChart, setDataChart] = useState([]);
     const [isLoading, setIsLoading] = useState(false);
     const sumRevenue = useMemo(() => {
         const result = dataBar?.reduce((total, curr) => {
             return total + (curr?.amount * curr?.price - curr?.amount * curr?.price * (curr?.discount /100))
         }, 0)
+        props.getSumRevenue(result)
+        return result;
+    }, [dataBar])
+    const sumSelledQuantity = useMemo(() => {
+        const result = dataBar?.reduce((total, curr) => {
+            return total + curr?.amount
+        }, 0);
+        props.setSumSelledQuantity(result)
         return result;
     }, [dataBar])
     const convertTypeChart = (data, types) => {
@@ -128,8 +137,8 @@ const BarChartQuarter = ({ dataBar = [], dataTypes = []}) => {
     return (
         <LoadingComponent isLoading={isLoading}>
             <BarChart
-                width={400}
-                height={150}
+                width={1150}
+                height={300}
                 data={dataChart}
                 margin={{
                     top: 5,
@@ -137,26 +146,29 @@ const BarChartQuarter = ({ dataBar = [], dataTypes = []}) => {
                     left: -10,
                     bottom: 5,
                 }}
-                barSize={20}
+                barSize={50}
             >
-                <XAxis dataKey="name" scale="point" padding={{ left: 10, right: 10 }} />
+                <XAxis dataKey="name" scale="point" padding={{ left: 40, right: 80 }} />
                 <YAxis />
                 <Tooltip />
                 {/* <Legend /> */}
                 <CartesianGrid strokeDasharray="3 3" />
-                <Bar dataKey="Số lượng" fill="#8884d8" background={{ fill: '#eee' }} />
+                <Bar dataKey="Số lượng" fill="#8884d8" background={{ fill: '#eee' }}>
+                    <LabelList dataKey="Số lượng" position={'top'}/>
+                    {/* <LabelList dataKey="name" position="insideTop" angle="45"  /> */}
+                </Bar>
             </BarChart>
-            <div style={{
+            {/* <div style={{
                 position: 'absolute', top: '-5%', left: '40%',
                 transform: 'translate(-50%, -50%)'
             }}>
                 <h4 style={{ margin: 0, fontSize: '11px' }}>Doanh thu: &nbsp;
                     <span>{sumRevenue.toLocaleString().replaceAll(',', '.')} VND</span>
                 </h4>
-            </div>
+            </div> */}
             <div
                 style={{
-                    position: 'absolute', top: '-27px', right: '18%',
+                    position: 'absolute', top: '-14px', right: '0%',
                     transform: 'translate(-50%, -50%)', fontSize: '12px', textAlign: 'center',
                     border: 'none', borderRadius: '4px', outline: 'none',
                     backgroundColor: 'white', padding: '4px 8px', boxSizing: 'border-box',

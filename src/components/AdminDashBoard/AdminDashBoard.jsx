@@ -245,7 +245,7 @@ const AdminDashBoard = () => {
                         style={{ marginTop: '10px', width: '100%' }}
                         columns={columns}
                         data={dataTable}
-                        pagination={{ pageSize: 5 }} scroll={{ y: 240 }}
+                        pagination={{ pageSize: 5 }} scroll={{ y: 300, }}
                     />
                 </div>
                 <div style={{ width: 'calc(50%)', height: '100%', display: 'flex', flexDirection: 'column' }}>

@@ -1,5 +1,5 @@
 import React, { PureComponent, useEffect, useState } from 'react';
-import { PieChart, Pie, Legend, Tooltip, ResponsiveContainer, Cell, CartesianGrid, Bar, YAxis, XAxis, BarChart } from 'recharts';
+import { PieChart, Pie, Legend, Tooltip, ResponsiveContainer, Cell, CartesianGrid, Bar, YAxis, XAxis, BarChart, LabelList } from 'recharts';
 
 const PieChartStock = (props) => {
     const { data } = props;
@@ -29,7 +29,7 @@ const PieChartStock = (props) => {
     return (
         <BarChart
             width={500}
-            height={300}
+            height={400}
             data={dataChart}
             margin={{
                 top: 5,
@@ -37,13 +37,15 @@ const PieChartStock = (props) => {
                 left: 20,
                 bottom: 5,
             }}
-            barSize={30}
+            barSize={40}
         >
             <XAxis dataKey="name" scale="point" padding={{ left: 25, right: 10 }} />
             <YAxis />
             <Tooltip />
             <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />
-            <Bar dataKey="Số lượng" fill="#8884d8" background={{ fill: '#eee' }} />
+            <Bar dataKey="Số lượng" fill="#8884d8" background={{ fill: '#eee' }}>
+                <LabelList dataKey={'Số lượng'} position={'top'} fontWeight={400} />
+            </Bar>
         </BarChart>
     )
 }
