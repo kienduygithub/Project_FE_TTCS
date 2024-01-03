@@ -42,7 +42,7 @@ const SignInPage = () => {
             console.log('location:', location)
             if(data?.status === 'OK' && data?.data){
                 message.success('Đăng nhập thành công');
-                console.log('>>> Data (Login): ', data);
+                // console.log('>>> Data (Login): ', data);
                 localStorage.setItem('access_token', JSON.stringify(data?.access_token));
                 localStorage.setItem('refresh_token', JSON.stringify(data?.refresh_token));
                 if(data?.access_token){
@@ -68,7 +68,7 @@ const SignInPage = () => {
     const handleGetDetailsUser = async (id, access_token) => {
         const res = await userServices.getDetailsUser(id, access_token);
         const refresh_token = data?.refresh_token;
-        console.log('>>> Result: ', res);
+        // console.log('>>> Result: ', res);
         dispatch(updateUser({...res?.data, access_token, refresh_token}))
     } 
     const handleSignIn =async () => {

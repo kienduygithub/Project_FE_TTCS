@@ -137,7 +137,8 @@ const AdminProduct = () => {
     }
     const queryProduct = useQuery({ queryKey: ['products'], queryFn: getAllProduct });
     const queryTypeProduct = useQuery({queryKey: ['types'], queryFn: fetchAllTypeProduct});
-    const { data: products, isLoading: isLoadingProducts} = queryProduct
+    const { data: products, isLoading: isLoadingProducts } = queryProduct
+    console.log('queryProduct', queryProduct)
     const { data: typeProducts, isLoading: isLoadingTypeProducts } = queryTypeProduct;
     /* GÁN CÁC KEY VALUE MUTATION */
     const {data, isLoading, isSuccess, isError} = mutation

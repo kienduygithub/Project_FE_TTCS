@@ -49,7 +49,7 @@ const AdminDashBoard = () => {
                     return total + curr?.countInStock
                 }, 0) : 0;
             return result;
-        }, [dataProducts?.data]
+        }, [dataProducts?.data] 
     )
     const totalEarned = useMemo(() => {
         const result = Array.isArray(dataOrders?.data) ? dataOrders?.data?.reduce(
@@ -196,7 +196,6 @@ const AdminDashBoard = () => {
                     totalPrice: order?.totalPrice
                 }    
             })
-    console.log('dataTable', dataTable);
     return (
         <div className="admin-dashboard-container">
             <h1>Tổng quan hệ thống</h1>
@@ -240,7 +239,7 @@ const AdminDashBoard = () => {
             </div>
             <div className="dashboard-down">
                 <div className="order-latest">
-                    <h1>Đơn hàng mới nhất</h1>
+                    <h1>Đơn hàng <span style={{fontSize: '10px', fontWeight: '400'}}>(Trong tuần)</span></h1>
                     <TableComponent
                         isShowButtonExcel={false}
                         style={{ marginTop: '10px', width: '100%' }}

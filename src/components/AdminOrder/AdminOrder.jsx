@@ -332,6 +332,7 @@ const AdminOrder = () => {
             isDelivered: value
         })
     }
+    console.log('orderDataGiven', orderDataGiven)
     return (
         <div className="admin-order-container">
             <div className="admin-order-header">

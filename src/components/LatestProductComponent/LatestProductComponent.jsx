@@ -19,7 +19,7 @@ const LatestProductComponent = ({ arrProduct }) => {
     const handleDetailsProduct = (id) => {
         navigate(`/product-details/${id}`);
     }
-    console.log('arrProduct', arrProduct)
+    // console.log('arrProduct', arrProduct)
     return (
         <Slider {...settings} className="slider-product">
             {Array.isArray(arrProduct) && arrProduct?.map(

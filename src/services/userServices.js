@@ -5,7 +5,9 @@ import axios from "axios"
 export const axiosJWT = axios.create();
 
 export const loginUser = async (data) => {
-    const res = await axios.post(`${process.env.REACT_APP_API_URL}/sign-in`, data);
+    const res = await axios.post(`${process.env.REACT_APP_API_URL}/sign-in`, data, {
+        withCredentials: true
+    });
     return res.data;
 }
 export const signupUser = async (data) => {
@@ -22,7 +24,7 @@ export const getDetailsUser = async (id, access_token) => {
 }
 export const refreshToken = async (refresh_token) => {
     const res = await axios.get(`http://localhost:3001/api/refresh-token`, {
-        // withCredentials: true,
+        withCredentials: true,
         // // Khi mà có cookies, nó sẽ tự động lấy cho các bạn, tức là nó tự động 
         // // truyền xuống Backend
         // // credentials: 'include'
@@ -34,7 +36,9 @@ export const refreshToken = async (refresh_token) => {
     return res.data;
 }
 export const logoutUser = async () => {
-    const res = await axios.post(`${process.env.REACT_APP_API_URL}/log-out`);
+    const res = await axiosJWT.post(`${process.env.REACT_APP_API_URL}/log-out`, {
+        withCredentials: true
+    });
     localStorage.clear();
     return res.data;
 }

@@ -14,8 +14,6 @@ import { useDispatch, useSelector } from 'react-redux'
 import { updateUser } from './redux/slices/userSlice'
 // import axios from 'axios'
 import LoadingComponent from './components/LoadingComponent/LoadingComponet'
-import axios from 'axios'
-import { Layout } from 'antd'
 import HeaderComponent from './components/HeaderComponent/HeaderComponent'
 const App = () => {
   // KHAI BÁO CÁC STATE 
@@ -25,8 +23,8 @@ const App = () => {
   useEffect(() => {
     setIsLoading(true)
     const { decoded, storageData } = handleDecoded();
-    console.log('>>> Decoded(App): ', decoded);
-    console.log('>>> storageData(App): ', storageData)
+    // console.log('>>> Decoded(App): ', decoded);
+    // console.log('>>> storageData(App): ', storageData)
     if (decoded?.id) {
       handleGetDetailsUser(decoded?.id, storageData)
     }
@@ -45,7 +43,7 @@ const App = () => {
     const currentTime = new Date();
     const { decoded } = handleDecoded();
     let token = localStorage.getItem('refresh_token');
-    let refreshToken = token ? JSON.parse(token) : null;
+    // let refreshToken = token ? JSON.parse(token) : null;
     let total = decoded?.exp - (currentTime.getTime() / 1000);
     if (total < 0) {
       if (token) {

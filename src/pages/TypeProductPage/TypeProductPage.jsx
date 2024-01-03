@@ -1,4 +1,4 @@
-import React, { Fragment, useEffect, useState } from "react";
+import React, { Fragment, useEffect, useMemo, useState } from "react";
 import './TypeProductPage.scss'
 import Footer from "../../components/FooterComponent/Footer";
 import CardComponent from "../../components/CardComponent/CardComponent";
@@ -70,6 +70,15 @@ const TypeProductPage = () => {
     // KHAI BÁO CÁC QUERY & MUTATION
     const queryType = useQuery({ queryKey: ['types-nav'], queryFn: fetchAllType });
     const { data: dataType, isLoading: isLoadingType, isSuccess: isSuccessType } = queryType;
+    const setTypeDisplayNav = useMemo(() => {
+        if (dataType) {
+            let newTypeArr = [];
+            Array.isArray(dataType?.data) && dataType?.data?.forEach((type) => {
+                newTypeArr.push(type?.type);
+            })
+            setType(newTypeArr);
+        }
+    }, [dataType])
     useEffect(() => {
         if (state) {
             if (again) {
@@ -83,15 +92,6 @@ const TypeProductPage = () => {
             range.text && fetchProductRangePrice(range, panigate.page, panigate.limit);
         }
     }, [range, panigate.limit, panigate.page])
-    useEffect(() => {
-        if (isSuccessType && dataType?.status === 'OK') {
-            let newTypeArr = [];
-            dataType?.data?.forEach((type) => {
-                newTypeArr.push(type?.type);
-            })
-            setType(newTypeArr);
-        }
-    }, [])
     const onChange = (current, pageSize) => {
         console.log('current', current, pageSize);
         setPanigate({ ...panigate, page: current - 1, limit: pageSize })

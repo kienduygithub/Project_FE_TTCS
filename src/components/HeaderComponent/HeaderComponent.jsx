@@ -146,7 +146,7 @@ const HeaderComponent = ({ isHiddenSearch = false, isHiddenCart = false }) => {
                             </div>
                         </LoadingComponent>
                         { isHiddenCart === false ?
-                            <div className="header-cart" onClick={() => navigate('/order')}>
+                            <div className="header-cart" onClick={() => navigate('/order')} style={{cursor: 'pointer'}}>
                                 <Badge key={user?.id} data={ user?.id } count={user?.access_token ? order?.orderItems?.length : 0} size={'small'}>
                                     <ShoppingCartOutlined key={user?.id} className="icon-cart"/>
                                 </Badge>

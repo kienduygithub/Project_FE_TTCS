@@ -25,7 +25,6 @@ const MyOrderPage = () => {
         id: ''
     })
     const location = useLocation();
-    console.log('location', location)
     const { state } = location;
     const navigate = useNavigate();
     const fetchMyOrder = async () => {
@@ -68,7 +67,6 @@ const MyOrderPage = () => {
     const mutationCancel = useMutationHooks(
         (data) => {
             const { id, token, orderItems, userId } = data;
-            console.log('data', data);
             const res = orderServices.cancelOrder(id, token, orderItems, userId);
             return res;
         }
@@ -113,7 +111,7 @@ const MyOrderPage = () => {
     const renderProduct = (data) => {
         return data?.map((order) => {
             return (
-                <div className='header-item' key={order?.id}>
+                <div className='header-item' key={order?.name}>
                     <img src={order?.image} className='image-item'/>
                     <div  className='name-item'>
                         {order?.name} 
