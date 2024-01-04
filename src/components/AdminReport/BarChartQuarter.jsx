@@ -132,8 +132,7 @@ const BarChartQuarter = (props) => {
         const dataConvert = convertDataChart(objectChart);
         setDataChart(dataConvert)
     }, [dataBar])
-    console.log('dataBar', dataBar, sumRevenue);
-    // console.log('dataType', dataTypes)
+   
     return (
         <LoadingComponent isLoading={isLoading}>
             <BarChart
@@ -155,7 +154,6 @@ const BarChartQuarter = (props) => {
                 <CartesianGrid strokeDasharray="3 3" />
                 <Bar dataKey="Số lượng" fill="#8884d8" background={{ fill: '#eee' }}>
                     <LabelList dataKey="Số lượng" position={'top'}/>
-                    {/* <LabelList dataKey="name" position="insideTop" angle="45"  /> */}
                 </Bar>
             </BarChart>
             {/* <div style={{

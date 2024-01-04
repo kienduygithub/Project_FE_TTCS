@@ -110,21 +110,19 @@ const AdminReport = () => {
                     <h1>Thống kê số liệu: </h1>
                     <select
                         style={{
-                            width: '120px',
-                            height: '30px',
-                            outline: 'none',
-                            fontSize: '15px'
+                            width: '144px', height: '30px', outline: 'none',
+                            fontSize: '15px', borderRadius: '4px', marginTop: '11px'
                         }} onChange={handleChangeSelect}
                     >    
                         {
                             options?.map((opt, index) => {
                                 if (index === options.length - 1) {
                                     return (
-                                        <option key={index} value={JSON.stringify(opt)} selected>{`${opt.year} - Quí ${opt.quar}`}</option>
+                                        <option key={index} value={JSON.stringify(opt)} selected>{`Năm ${opt.year} - Quí ${opt.quar}`}</option>
                                     )
                                 }
                                 return (
-                                    <option key={index} value={JSON.stringify(opt)} >{`${opt.year} - Quí ${opt.quar}`}</option>
+                                    <option key={index} value={JSON.stringify(opt)} >{`Năm ${opt.year} - Quí ${opt.quar}`}</option>
                                 )
                             })       
                         }
@@ -153,13 +151,15 @@ const AdminReport = () => {
                             <div className="quarter-sum">
                                 <div className="border">
                                     <h4>Chỉ tiêu đạt được</h4>
-                                    <span style={{fontSize: '18px'}}>{Math.round((sumRevenue / 400000000) * 100)}%</span>
+                                    <h6 style={{margin: 0}}>(/400000000)</h6>
+                                    <span style={{ fontSize: '18px' }}>{Math.round((sumRevenue / 400000000) * 100)}%</span>
                                 </div>
                             </div>
                         </div>
                     </div>
                     <div className="quarter quarter-down">
-                        <div style={{ width: '100%', height: '300px', position: 'relative', boxSizing: 'border-box', marginTop: 'auto'}}>
+                        {/* <div className="quarter-hr"></div> */}
+                        <div style={{ width: '100%', height: '300px', position: 'relative', boxSizing: 'border-box', marginTop: 'auto', userSelect: 'none' }}>
                             <h4>Sản phẩm bán ra</h4>
                             <BarChartQuarter
                                 dataBar={quarterData}
