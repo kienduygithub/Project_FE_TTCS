@@ -6,6 +6,7 @@ import { useMutationHooks } from "../../hooks/userMutationHook";
 import BarChartQuarter from "./BarChartQuarter";
 import LoadingComponent from '../../components/LoadingComponent/LoadingComponet'
 import { useQuery } from "react-query";
+import { CarryOutFilled, CarryOutOutlined, CrownFilled, PropertySafetyFilled, ShopOutlined, ShoppingFilled, ToolFilled, UnorderedListOutlined } from "@ant-design/icons";
 const AdminReport = () => {
     const year = new Date().getFullYear();
     const month = new Date().getMonth();
@@ -131,30 +132,28 @@ const AdminReport = () => {
                 <div className="report-chart">    
                     <div className="quarter quarter-up">
                         <div className="quarter-left">
-                            <div className="quarter-sum">
-                                <div className="border">
-                                    <h4>Tổng sản phẩm</h4>
-                                    <span>{sumSelledQuantity}</span>
-                                </div>
+                            <div>
+                                <PropertySafetyFilled className="icon"/>
+                                <h4>Tổng doanh thu</h4>
                             </div>
+                            <span className="quarter-value">{`${sumRevenue.toLocaleString().replaceAll(',', '.')} VNĐ`}</span>
                         </div>
-
                         <div className="quarter-center">
-                            <div className="quarter-sum">
-                                <div className="border">
-                                    <h4>Tổng thu</h4>
-                                    <span>{`${sumRevenue.toLocaleString().replaceAll(',', '.')} VNĐ`}</span>
-                                </div>
+                            <div>
+                                <ShoppingFilled className="icon"/>
+                                <h4>Doanh số sản phẩm</h4>
                             </div>
+                            <span className="quarter-value">{sumSelledQuantity}</span>
                         </div>
                         <div className="quarter-right">
-                            <div className="quarter-sum">
-                                <div className="border">
+                            <div>
+                                <CarryOutFilled className="icon"/>
+                                <div className="target-text">
                                     <h4>Chỉ tiêu đạt được</h4>
-                                    <h6 style={{margin: 0}}>(/400000000)</h6>
-                                    <span style={{ fontSize: '18px' }}>{Math.round((sumRevenue / 400000000) * 100)}%</span>
+                                    <h6>(/400000000)</h6>
                                 </div>
-                            </div>
+                            </div>                        
+                            <span className="quarter-value">{Math.round((sumRevenue / 400000000) * 100)}%</span>
                         </div>
                     </div>
                     <div className="quarter quarter-down">

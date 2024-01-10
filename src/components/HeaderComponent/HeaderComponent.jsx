@@ -91,6 +91,7 @@ const HeaderComponent = ({ isHiddenSearch = false, isHiddenCart = false }) => {
         }
         setIsOpenPopup(false)
     }
+    
     return(
         <div className="header-container">
             <WrapperHeader className="header-content">
