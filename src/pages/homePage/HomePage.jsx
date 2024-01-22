@@ -36,7 +36,7 @@ const HomePage = () => {
     const [productLatest, setProductLatest] = useState([]);
     const navigate = useNavigate();
     const fetchProductAll = async (context) => {
-        console.log('context:', context);
+        // console.log('context:', context);
         const limit = context?.queryKey && context?.queryKey[1];
         const searchValue = context?.queryKey && context?.queryKey[2];
         const res = await productServices.getAllProduct(searchValue, limit);

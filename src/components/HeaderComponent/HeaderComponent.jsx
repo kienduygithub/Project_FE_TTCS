@@ -36,7 +36,6 @@ const HeaderComponent = ({ isHiddenSearch = false, isHiddenCart = false }) => {
     const [name, setName] = useState('');
     const [loading, setLoading] = useState(false);
     const [search, setSearch] = useState('');
-    // const [refreshToken, setRefreshToken] = useState('');
     const [isOpenPopup, setIsOpenPopup] = useState(false);
     const order = useSelector((state) => state.order);
     const location = useLocation();
@@ -68,7 +67,8 @@ const HeaderComponent = ({ isHiddenSearch = false, isHiddenCart = false }) => {
             }
             <p className="content-popup" onClick={() => handleClickNavigate()}>Đăng xuất</p>
         </div>
-      );
+    );
+    
     // SEARCH
     const onSearch = (e) => {
         setSearch(e.target.value);

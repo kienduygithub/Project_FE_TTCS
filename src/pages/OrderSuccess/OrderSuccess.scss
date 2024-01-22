@@ -6,16 +6,19 @@
     h3.back-to-home {
         margin     : 0;
         padding-top: 10px;
-        font-size  : 12px;
-        width      : 25%;
+        font-size  : 14px;
+        width      : calc(11% - 5px);
         box-sizing : border-box;
         height     : 25px;
-        transition : color 0.095s linear, font-size 0.095s linear;
+        transition : color 0.095s ease-in-out, transform 0.095s ease-in-out, transform-origin 0.095s ease-in-out;
+        font-size  : 'Lora', serif;
+        font-family: 400;
     }
 
     h3.back-to-home:hover {
-        color    : #1677ff;
-        font-size: 13px;
+        color           : #1677ff;
+        transform       : scale(0.94);
+        transform-origin: center;
     }
 
     h3.cart-order-title {

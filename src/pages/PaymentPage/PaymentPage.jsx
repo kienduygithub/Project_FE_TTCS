@@ -73,7 +73,7 @@ const PaymentPage = () => {
         (data) => {
             const { id, access_token, ...rests } = data;
             const res = userServices.updateUser(data);
-            console.log('resUpdate', res)
+            // console.log('resUpdate', res)
             return res;
         }
     )
@@ -81,7 +81,7 @@ const PaymentPage = () => {
         async (data) => {
             const { id, access_token, ...rests } = data;
             const res = await orderServices.createOrder({...rests}, access_token);
-            console.log('resOrder', res)
+            // console.log('resOrder', res)
             return res;
         }
     )
@@ -212,7 +212,7 @@ const PaymentPage = () => {
             paidAt: details.update_time,
             email: user?.email
         })
-        console.log('details, data', details, data);
+        // console.log('details, data', details, data);
     }
     useEffect(() => {
         if (!window.paypal) {

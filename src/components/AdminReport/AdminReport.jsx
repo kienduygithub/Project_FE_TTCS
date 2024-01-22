@@ -89,21 +89,6 @@ const AdminReport = () => {
     const getSumRevenue = (sum) => {
         setSumRevenue(sum);
     }
-    // console.log('quarterData', quarterData);
-    // const displayTarget = ({total, interval}) => {
-    //     const [value, setValue] = useState(0);
-    //     useEffect(() => {
-    //         const timer = setInterval(() => {
-    //             const percent = (value / total) * 100;
-    //             setValue((prevValue) => (prevValue < total ? prevValue + 1 : prevValue))
-    //         }, interval);
-    //         return () => clearInterval(timer)
-    //     }, [value, total, interval])
-    //     return (
-    //         <span>{ `${percent}%`}</span>
-    //     )
-    // }
-    console.log('sumRevenue', sumRevenue)
     return (
         <LoadingComponent isLoading={isLoading}>
             <div className="report-container">

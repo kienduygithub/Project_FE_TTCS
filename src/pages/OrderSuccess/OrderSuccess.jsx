@@ -28,7 +28,7 @@ const OrderSuccess = () => {
             <h3 className='back-to-home'
                 onClick={() => navigate('/')} style={{cursor: 'pointer'}}
             >
-                <span>Trờ về trang chủ</span>
+                <span>Trở về trang chủ</span>
                 <RollbackOutlined />
             </h3>
             {/* <LoadingComponent isLoading={isLoadingAddOrder}> */}

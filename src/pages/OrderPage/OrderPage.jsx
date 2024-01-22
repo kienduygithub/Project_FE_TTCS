@@ -80,7 +80,7 @@ const OrderPage = () => {
         dispatch(removeOrderProduct({ idProduct }))
     }
     const handleDeleteAllOrder = () => {
-        if (checkedList?.length > 1) {
+        if (checkedList?.length >= 1) {
             dispatch(removeAllOrderProduct({ listChecked: checkedList }))
             setCheckedList([])
         }
@@ -100,7 +100,7 @@ const OrderPage = () => {
         const { name, address, city, phone } = stateUserDetails;
         if (name && address && city && phone) {
             mutationUpdate.mutate({ id: user?.id, access_token: user?.access_token, ...stateUserDetails }, {
-                onSuccess: () => {
+                onSuccess: () => { 
                     dispatch(updateUser({ ...user, name, city, phone, address }))
                     setIsOpenModalUpdateInfo(false)
                 }

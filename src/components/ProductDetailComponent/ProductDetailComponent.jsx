@@ -47,7 +47,7 @@ const ProductDetailComponent = ({idProduct}) => {
         {queryKey: ['product-details', idProduct], queryFn: fetchGetDetailsProduct}, 
         {enabled: !!idProduct}
     );
-    const { isLoading, data: productDetails } = queryProduct;
+    const { data: productDetails, isLoading: isLoadingProductDetails } = queryProduct;
     const renderStars = (num) => {
         let stars = [];
         for(let i = 1; i <= num;i ++){
@@ -66,7 +66,7 @@ const ProductDetailComponent = ({idProduct}) => {
             }
         }
     }
-    console.log('Location: ', location)
+    // console.log('Location: ', location)
     const handleAddOrderProduct = () => {
         if(!user?.id){
             navigate('/sign-in', {state: location.pathname});
@@ -87,10 +87,9 @@ const ProductDetailComponent = ({idProduct}) => {
             } else {
                 setErrorLimitOrder(true);
             }
-            
         }
     }
-
+  
     useEffect(() => {
         if (order?.isSuccessOrder) {
             message.success('Thêm vào giỏ hàng thành công')
@@ -99,6 +98,7 @@ const ProductDetailComponent = ({idProduct}) => {
             dispatch(resetOrder());
         }
     }, [order?.isSuccessOrder])
+
     useEffect(() => {
         const orderRedux = order?.orderItems.find((item) => item.productId === productDetails?.id)
         if ((orderRedux?.amount + numProduct) <= orderRedux?.countInStock || (!orderRedux && productDetails?.countInStock > 0)) {
@@ -111,9 +111,9 @@ const ProductDetailComponent = ({idProduct}) => {
     useEffect(() => {
         initFacebookSDK()
     }, [])
-    console.log('productDetails: ', productDetails, user);
+    // console.log('productDetails: ', productDetails, user);
     return(
-        <LoadingComponent isLoading={isLoading}>
+        <LoadingComponent isLoading={isLoadingProductDetails}>
             <Row style={{padding: '16px'}}>
                 <Col span={10} className="image-product-detail">
                     <Image src={productDetails?.image} alt="image product" preview={false}/>
@@ -170,7 +170,7 @@ const ProductDetailComponent = ({idProduct}) => {
                             <MinusOutlined className="btn btn-minus" onClick={() => handleChangeCount('decrease', numProduct === 1)}/>
                             <InputNumber className="input" size="small" 
                                             min={1} max={productDetails?.countInStock} defaultValue={1} value={numProduct}
-                                            onChange={(e) => onChange(e)} 
+                                            onChange={(e) => onChange(e)} style={{width: '50px', userSelect: 'none'}}
                             />
                             <PlusOutlined  className="btn btn-plus" onClick={() => handleChangeCount('increase', numProduct === productDetails?.countInStock)}/>
                         </div>
@@ -211,7 +211,7 @@ const ProductDetailComponent = ({idProduct}) => {
                 </Col>
                 <CommentComponent
                     dataHref={process.env.REACT_APP_IS_LOCAL ? "https://developers.facebook.com/docs/plugins/comments#configurator" : window.location.href}
-                    width="100%"
+                    width="100%" 
                 />
             </Row>
         </LoadingComponent>

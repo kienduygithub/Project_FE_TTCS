@@ -30,7 +30,7 @@ const TypeProductPage = () => {
     })
     const [again, setAgain] = useState(true);
     const searchProduct = useSelector((state) => state?.product?.search);
-    const searchDebounce = useDebounce(searchProduct, 1000);
+    const searchDebounce = useDebounce(searchProduct, 1000); 
     const fetchAllType = async () => {
         const res = await productServices.getAllTypeProducts();
         return res;
@@ -41,7 +41,7 @@ const TypeProductPage = () => {
         if(res?.status === 'OK'){
             setLoading(false)
             setProducts(res?.data)
-            setPanigate({...panigate, total: res?.total})
+            setPanigate({...panigate, total: res?.total}) 
         }else{
             setLoading(false)
         }
@@ -59,19 +59,22 @@ const TypeProductPage = () => {
     }
     const handleSetProductsNav = async (type, page, limit) => {
         setAgain(true);
+        setPanigate({ ...panigate, page: 0 })
+        setRange({...range, text: null, min: 0, max: 0})
         navigate(`/product/${type.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'D').replace(/ /g, '_')}`, { state: type})
     }
     const handleSetProductsRangePriceNav = (text, min, max) => {
         // console.log('range', text, min, max);
         // navigate(`/product/${text.normalize('NFD').replace(/[\u0300-\u036f]/g, '').replace(/đ/g, 'd').replace(/Đ/g, 'D').replace(/ /g, '_')}`, {state: {range: {min, max}}})
-        console.log('range', text, min, max);
-        setRange({ ...range, text: text, min: min, max: max })
+        // console.log('range', text, min, max);
+        setPanigate({...panigate, page: 0})
+        setRange({ ...range, text: text, min: min, max: max }) 
     } 
     // KHAI BÁO CÁC QUERY & MUTATION
     const queryType = useQuery({ queryKey: ['types-nav'], queryFn: fetchAllType });
     const { data: dataType, isLoading: isLoadingType, isSuccess: isSuccessType } = queryType;
     const setTypeDisplayNav = useMemo(() => {
-        if (dataType) {
+        if (dataType) { 
             let newTypeArr = [];
             Array.isArray(dataType?.data) && dataType?.data?.forEach((type) => {
                 newTypeArr.push(type?.type);
@@ -83,8 +86,8 @@ const TypeProductPage = () => {
         if (state) {
             if (again) {
                 fetchProductType(state, panigate.page, panigate.limit);
+                setAgain(false)
             }
-            setAgain(false);
         } 
     }, [state, panigate.page, panigate.limit, again]);
     useEffect(() => {
@@ -94,14 +97,14 @@ const TypeProductPage = () => {
     }, [range, panigate.limit, panigate.page])
     const onChange = (current, pageSize) => {
         console.log('current', current, pageSize);
-        setPanigate({ ...panigate, page: current - 1, limit: pageSize })
-        setAgain(true)
+        setPanigate({ ...panigate, page: current - 1, limit: pageSize }) 
+        setAgain(true);
     }
     console.log('panigate:', panigate)
     return(
         <LoadingComponent isLoading={isLoadingType || loading}>
         <div style={{ padding: '0 120px', height: '100%', backgroundColor: '#efefef' }}>
-            <h3 style={{ margin: 0, paddingTop: '10px', fontSize: '11px' }}>
+            <h3 style={{ margin: 0, paddingTop: '10px', fontSize: '14px' }}>
                 <span style={{ cursor: 'pointer' }} onClick={() => navigate('/')}>Trang chủ</span>
                 &gt; Danh mục sản phẩm
             </h3>    
@@ -114,7 +117,7 @@ const TypeProductPage = () => {
                             type="price" label={'Bảng giá'}
                             categoris={[
                                 { text: `5-10tr`, min: 5000000, max: 10000000 },
-                                { text:  `10-20tr`, min: 10000000, max: 20000000}
+                                { text: `10-20tr`, min: 10000000, max: 20000000 },
                             ]}
                             handleSetProductsRangePriceNav={handleSetProductsRangePriceNav}
                         />
@@ -140,7 +143,7 @@ const TypeProductPage = () => {
                         })}
                     </div>
                     <div className="type-product-pagination" style={{marginTop: 'auto', marginBottom: '10px'}}>
-                        <Pagination defaultCurrent={panigate?.page + 1} total={panigate?.total} onChange={onChange}
+                        <Pagination defaultCurrent={panigate?.page + 1} current={panigate?.page + 1} total={panigate?.total} onChange={onChange}
                             className="pagination" defaultPageSize={8}
                         />
                     </div>
