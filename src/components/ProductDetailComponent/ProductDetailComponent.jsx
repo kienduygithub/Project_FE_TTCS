@@ -115,7 +115,7 @@ const ProductDetailComponent = ({idProduct}) => {
     return(
         <LoadingComponent isLoading={isLoadingProductDetails}>
             <Row style={{padding: '16px'}}>
-                <Col span={10} className="image-product-detail">
+                <Col span={10} className="image-product-detail" style={{height: 500}}>
                     <Image src={productDetails?.image} alt="image product" preview={false}/>
                     <Row className="list-product-image">
                         <Col span={4}>
@@ -133,10 +133,9 @@ const ProductDetailComponent = ({idProduct}) => {
                         <Col span={4}>
                             <Image src={ImageProductSmall6} alt="image small" preview={false}/>
                         </Col>
-                        
                     </Row>
                 </Col>
-                <Col span={14} className="product-detail-info">
+                <Col span={14} className="product-detail-info" style={{paddingTop: '20px'}}>
                     <h1 className="name-product">
                         {productDetails?.name}
                     </h1>
@@ -150,7 +149,6 @@ const ProductDetailComponent = ({idProduct}) => {
                                 }
                             )
                         }
-                        {/* <Rate allowHalf defaultValue={productDetails?.rating} /> */}
                         <span className="text">| Đã bán {productDetails?.selled || '1000+'}</span>
                     </div>
                     <div className="price-product">
@@ -158,8 +156,7 @@ const ProductDetailComponent = ({idProduct}) => {
                     </div>
                     <div className="address-product">
                         Giao đến: &nbsp;
-                        <span className="address">{user?.address || 'Hòa Bình - Việt Nam'}</span>
-                        {/* <span className="address-change"> - Đổi địa chỉ</span> */}
+                        <span className="address">{user?.address || ''}</span>
                     </div>
                     <LikeButtonComponent
                         dataHref={process.env.REACT_APP_IS_LOCAL ? "https://developers.facebook.com/docs/plugins/" : window.location.href}
@@ -167,12 +164,12 @@ const ProductDetailComponent = ({idProduct}) => {
                     <div className="quality-product">
                         <div className="message">Số lượng</div>
                         <div className="quality-button">   
-                            <MinusOutlined className="btn btn-minus" onClick={() => handleChangeCount('decrease', numProduct === 1)}/>
+                            <MinusOutlined className="btn btn-minus" style={{width: 35, height: 30}} onClick={() => handleChangeCount('decrease', numProduct === 1)}/>
                             <InputNumber className="input" size="small" 
                                             min={1} max={productDetails?.countInStock} defaultValue={1} value={numProduct}
-                                            onChange={(e) => onChange(e)} style={{width: '50px', userSelect: 'none'}}
+                                            onChange={(e) => onChange(e)} style={{userSelect: 'none'}}
                             />
-                            <PlusOutlined  className="btn btn-plus" onClick={() => handleChangeCount('increase', numProduct === productDetails?.countInStock)}/>
+                            <PlusOutlined  className="btn btn-plus" style={{width: 35, height: 30}} onClick={() => handleChangeCount('increase', numProduct === productDetails?.countInStock)}/>
                         </div>
                     </div>
                     <div style={{ display: 'flex', gap: '10px' }}>

@@ -1,4 +1,5 @@
 .slider-product {
+    height: 450px;
 
     .slick-list {
         height: 100%;
@@ -13,17 +14,17 @@
 
     display        : flex;
     align-items    : center;
-    height         : 320px;
+    height         : 350px !important;
     justify-content: flex-start;
     gap            : 10px;
 
     .card-product {
         width           : calc(25% - 10px);
-        height          : 280px;
         background-color: white;
         box-sizing      : border-box;
         box-shadow      : rgba(0, 0, 0, 0.16) 0px 1px 4px;
         border-radius   : 4px;
+        height          : 320px;
 
         &:hover {
             .card-header .card-image {
@@ -36,7 +37,7 @@
         }
 
         .card-header {
-            height         : 180px;
+            height         : 230px;
             padding        : 8px 16px;
             display        : flex;
             align-items    : center;
@@ -64,7 +65,7 @@
             }
 
             .card-image {
-                width     : 100%;
+                width     : 80%;
                 height    : 100%;
                 object-fit: cover;
                 transition: transform 0.25s ease-in-out;
@@ -73,16 +74,16 @@
 
         .card-content {
             margin-top: auto;
-            padding   : 4px 16px;
+            padding   : 4px 20px;
 
             .card-name {
-                font-size  : 11px;
+                font-size  : 14px !important;
                 font-weight: 400;
                 transition : color 0.25s ease-in-out;
             }
 
             .card-report {
-                font-size  : 11px;
+                font-size  : 13px !important;
                 color      : #787889;
                 display    : flex;
                 align-items: center;
@@ -93,22 +94,22 @@
                     align-items: center;
 
                     .star-text {
-                        font-size: 10px;
+                        font-size: 13px !important;
                         position : relative;
 
                         &::before {
                             content    : "";
                             border-left: 1px solid #ccc;
                             position   : absolute;
-                            top        : 2px;
-                            left       : 18px;
+                            top        : 5px;
+                            left       : 22px;
                             height     : 10px;
                         }
                     }
 
                     .star-icon {
                         text-align  : center;
-                        font-size   : 11px;
+                        font-size   : 13px !important;
                         color       : yellow;
                         margin-top  : 1px;
                         margin-right: 5px;
@@ -117,8 +118,8 @@
                 }
 
                 .quality {
-                    font-size  : 8px;
-                    line-height: 8px;
+                    font-size  : 12px !important;
+                    line-height: 8px !important;
                     color      : rgb(120, 120, 120);
                 }
 
@@ -127,13 +128,13 @@
             .card-price {
                 .price-text {
                     color       : #ff424e;
-                    font-size   : 16px;
+                    font-size   : 18px !important;
                     font-weight : 500;
                     margin-right: 5px;
                 }
 
                 .price-discount {
-                    font-size: 10px;
+                    font-size: 12px !important;
                     color    : rgb(255, 66, 78);
                 }
             }
@@ -213,7 +214,7 @@
     .slick-dots {
         position : absolute;
         left     : 50%;
-        top      : 90%;
+        bottom   : -15px;
         transform: translate(-50%, -50%);
 
         li button:before {
@@ -225,102 +226,3 @@
         }
     }
 }
-
-// .latest-products {
-//     display        : flex;
-//     align-items    : center;
-//     height         : 320px;
-//     justify-content: flex-start;
-//     gap            : 10px;
-
-//     .card-product {
-//         width           : calc(25% - 10px);
-//         height          : 280px;
-//         background-color: white;
-//         box-sizing      : border-box;
-//         box-shadow      : rgba(0, 0, 0, 0.16) 0px 1px 4px;
-//         border-radius   : 4px;
-
-//         .card-header {
-//             height         : 180px;
-//             padding        : 4px 16px;
-//             display        : flex;
-//             align-items    : center;
-//             justify-content: center;
-//             border-radius  : 4px;
-
-//             .card-image {
-//                 width     : 100%;
-//                 height    : 100%;
-//                 object-fit: cover;
-//             }
-//         }
-
-//         .card-content {
-//             margin-top: auto;
-//             padding   : 4px 16px;
-
-//             .card-name {
-//                 font-size  : 11px;
-//                 font-weight: 400;
-//             }
-
-//             .card-report {
-//                 font-size  : 11px;
-//                 color      : #787889;
-//                 display    : flex;
-//                 align-items: center;
-//                 margin     : 7px 0 0;
-
-//                 .rate {
-//                     display    : flex;
-//                     align-items: center;
-
-//                     .star-text {
-//                         font-size: 10px;
-//                         position : relative;
-
-//                         &::before {
-//                             content    : "";
-//                             border-left: 1px solid #ccc;
-//                             position   : absolute;
-//                             top        : 2px;
-//                             left       : 18px;
-//                             height     : 10px;
-//                         }
-//                     }
-
-//                     .star-icon {
-//                         text-align  : center;
-//                         font-size   : 11px;
-//                         color       : yellow;
-//                         margin-top  : 1px;
-//                         margin-right: 5px;
-//                     }
-
-//                 }
-
-//                 .quality {
-//                     font-size  : 8px;
-//                     line-height: 8px;
-//                     color      : rgb(120, 120, 120);
-//                 }
-
-//             }
-
-//             .card-price {
-//                 .price-text {
-//                     color       : #ff424e;
-//                     font-size   : 16px;
-//                     font-weight : 500;
-//                     margin-right: 5px;
-//                 }
-
-//                 .price-discount {
-//                     font-size: 10px;
-//                     color    : rgb(255, 66, 78);
-//                 }
-//             }
-//         }
-//     }
-// }

@@ -2,11 +2,11 @@
     background-color: white;
 }
 
-.nav-container {
+.navigation-container {
 
     .nav-label {
         color              : rgb(56, 56, 61);
-        font-size          : 14px;
+        font-size          : 18px !important;
         font-weight        : 500;
         // background-color: red;
     }
@@ -16,10 +16,11 @@
         flex-direction : column;
         justify-content: center;
         gap            : 12px;
+        margin-bottom  : 8px !important;
 
         .text-value {
             color      : rgb(56, 56, 61);
-            font-size  : 12px;
+            font-size  : 15px !important;
             font-weight: 400;
             user-select: none;
             transition : all 0.4s ease-in-out;
@@ -63,6 +64,7 @@
     .price-content {
         .price-text {
             user-select: none;
+            font-size  : 15px !important;
 
             &:hover {
                 border: 1px solid #1677ff !important;

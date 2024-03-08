@@ -159,7 +159,7 @@ const AdminDashBoard = () => {
             ...getColumnSearchProps('userId')
         },
         {
-            title: 'isPaid',
+            title: 'Thanh toán',
             dataIndex: 'isPaid',
             width: '20%',
             filters: [

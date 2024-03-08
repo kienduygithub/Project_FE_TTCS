@@ -77,12 +77,12 @@ const HomePage = () => {
     return(
         <LoadingComponent isLoading={isLoading || loading}>
         <div className="homePage">
-            <div className="home-TypeProduct" style={{ padding: '0 120px'}}>
+            <div className="home-TypeProduct" style={{ padding: '0 120px', fontSize: 16}}>
                 <div style={{cursor: 'pointer'}} onClick={() => navigate('/')}>Trang chủ</div>
                 <div className="type-product-container" style={{position: 'relative'}}>
                     <div className="type-product-text">Loại sản phẩm</div>
                         <div className="type-product" style={{
-                            position: 'absolute', top: '0px', right: '-100px',
+                            position: 'absolute', top: '0px', right: '-120px',
                             zIndex: '1000', boxSizing: 'border-box',
                             borderRadius: '4px', display: 'none'
                         }}>
@@ -101,7 +101,7 @@ const HomePage = () => {
                     </div>
                 </div>    
             </div>
-            <div className="container" style={{ backgroundColor: '#f7f7f7', padding: '0 120px'}}>
+            <div className="header-product-container" style={{ backgroundColor: '#f7f7f7', padding: '0 120px'}}>
                 <div style={{position: 'relative'}}>
                     <a className="link-go-shop" href={'#shop'}><img src={bannerHome} style={{ width: '100%', position: 'relative' }}/></a>
                     <SliderComponent
@@ -128,8 +128,10 @@ const HomePage = () => {
                     </a>
                 </div>
                 <div style={{margin: '100px 0 20px'}}>
-                    <div className="header-latest" style={{ textAlign: 'center' }}><span style={{color: 'rgba(0, 0, 0, 0.55)'}}>Gần nhất</span></div>
-                    <hr style={{ width: '250px', height: '1px', borderTop: '1px solid rgba(0, 0, 0, 0.55)', borderLeft: 'none', marginBottom: '18px' }}></hr>
+                    <div className="header-latest d-flex flex-column align-items-center" style={{textAlign: 'center'}}>
+                        <span style={{color: 'rgba(0, 0, 0, 0.55)'}}>Gần nhất</span>
+                        <hr style={{ width: '250px', height: '1px', borderTop: '1px solid rgba(0, 0, 0, 0.55)', borderLeft: 'none', marginBottom: '18px' }}></hr>
+                    </div>
                     <LoadingComponent isLoading={isLoadingLatest}>
                         <LatestProductComponent
                             arrProduct={productLatest}
@@ -137,10 +139,11 @@ const HomePage = () => {
                     </LoadingComponent>    
                 </div>  
                 <section id="shop"></section>    
-                <div className="header-products" style={{ textAlign: 'center' }}><span style={{color: 'rgba(0, 0, 0, 0.55)'}}>Sản phẩm</span></div>
-                <hr style={{ width: '250px', height: '1px', borderTop: '1px solid rgba(0, 0, 0, 0.55)', borderLeft: 'none' }}></hr>
+                <div className="header-products d-flex flex-column align-items-center">
+                    <span style={{color: 'rgba(0, 0, 0, 0.55)'}}>Sản phẩm</span>
+                    <hr style={{ width: '250px', height: '1px', borderTop: '1px solid rgba(0, 0, 0, 0.55)', borderLeft: 'none' }}></hr>
+                </div>
                 <div className="product" style={{ marginTop: '20px', marginLeft: '20px', display: 'flex', gap: '15px', flexWrap: 'wrap' }}>
-                     
                     {   
                         products?.data?.map((product) => {
                             return(

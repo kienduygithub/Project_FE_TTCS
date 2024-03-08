@@ -185,7 +185,7 @@ const PaymentPage = () => {
 
     const addPaypalScript = async () => {
         const {data} = await paymentServices.getConfig();
-        const script = document.createElement('script');
+        const script = document.createElement('script'); 
         script.type = 'text/javascript';
         script.src = `https://www.paypal.com/sdk/js?client-id=${data}`;
         script.async = true;
@@ -295,7 +295,7 @@ const PaymentPage = () => {
                     {payment === 'paypal' && sdkReady ? 
                             <div style={{width: '100%'}}>
                                 <PayPalButton
-                                    amount={ Math.round(totalPriceMemo / 300000)}
+                                    amount={ Math.round(totalPriceMemo / 300000) }
                                     // shippingPreference="NO_SHIPPING" // default is "GET_FROM_FILE"
                                     onSuccess={onSuccessPaypal}
                                     onError={() => {

@@ -52,6 +52,7 @@
                     margin     : 0;
                     font-weight: 400;
                     font-size  : 14px;
+                    font-family: 'Lora', serif;
                 }
 
                 div {
@@ -76,7 +77,7 @@
                             font-weight: 400;
                             position   : absolute;
                             right      : -62px;
-                            top        : 4px;
+                            top        : 2px;
                             font-size  : 10px;
                         }
                     }
@@ -112,6 +113,15 @@
                 font-family   : 'Lora',
                     serif;
                 user-select: none;
+            }
+
+            .button-export-excel-report {
+                transition: all 0.025s ease-in-out;
+
+                &:hover {
+                    background-color: rgba(22, 119, 255, 0.45) !important;
+                    color           : white;
+                }
             }
         }
     }

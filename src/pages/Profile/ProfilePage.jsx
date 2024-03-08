@@ -43,7 +43,6 @@ const ProfilePage = () => {
     })
     const [form] = Form.useForm();
     const handleOnChangePassword = (e) => {
-        console.log('e.target.name', e.target.name, e.target.value);
         setPassword(e.target.value);
     }
     const handleOnChangeNewPassword = (e) => {
@@ -149,7 +148,7 @@ const ProfilePage = () => {
     const { data: dataChangePassword, isLoading: isLoadingChangePassword, isSuccess: isSuccessChangePassword, isError: isErrorChangePassword } = mutationChangePassword;
     useEffect(() => {
         if(isSuccess){
-            message.success();
+            message.success('Thay đổi thành công');
             if (isModalPhoneOpen) {
                 setIsModalPhoneOpen(false);
             }
@@ -157,8 +156,6 @@ const ProfilePage = () => {
                 setIsModalAddressOpen(false);
             }
             handleGetDetailsUser(user?.id, user?.access_token);
-        }else if(isError){
-            message.error()
         }
     }, [isSuccess, isError])
     useEffect(() => {
@@ -197,7 +194,7 @@ const ProfilePage = () => {
     return (
         <>
             <HeaderComponent isHiddenCart isHiddenSearch/>
-            <div style={{padding: '0 120px'}}>
+            <div style={{padding: '0 120px', backgroundColor: '#f5f5fa'}}>
                 <div className="profile-page-container">
                     <h1>Thông tin tài khoản</h1>
                     <LoadingComponent isLoading={isLoading}>

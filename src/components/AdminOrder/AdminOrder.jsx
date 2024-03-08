@@ -292,7 +292,7 @@ const AdminOrder = () => {
                 totalPrice: convertPrice(order?.totalPrice)
             }
         }
-    ) 
+    ).reverse()
 
     //CÁC XỬ LÍ
     const handleUpdateOrder = () => {

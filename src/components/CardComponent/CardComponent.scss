@@ -1,9 +1,18 @@
 .ant-card {
-    height       : 310px;
+    height       : 350px;
     position     : relative;
     box-shadow   : none;
     box-shadow   : rgba(0, 0, 0, 0.16) 0px 1px 4px;
     border-radius: 8px;
+
+    .card-cover-content {
+        height: 230px;
+
+        img {
+            width : 80% !important;
+            height: 100% !important;
+        }
+    }
 
     // margin-bottom: 15px;
     &:hover {
@@ -63,13 +72,13 @@
         padding: 10px 15px;
 
         .name {
-            font-size  : 11px;
+            font-size  : 14px !important;
             font-weight: 400;
             transform  : color 0.25s ease-in-out;
         }
 
         .report {
-            font-size  : 11px;
+            font-size  : 13px !important;
             color      : #787889;
             display    : flex;
             align-items: center;
@@ -80,12 +89,12 @@
                 align-items: center;
 
                 .star-text {
-                    font-size: 10px;
+                    font-size: 13px !important;
                 }
 
                 .star-icon {
                     text-align  : center;
-                    font-size   : 12px;
+                    font-size   : 13px !important;
                     color       : yellow;
                     margin-right: 5px;
                     position    : relative;
@@ -104,8 +113,8 @@
             }
 
             .report-quality {
-                font-size  : 8px;
-                line-height: 24px;
+                font-size  : 12px !important;
+                line-height: 24px !important;
                 color      : rgb(120, 120, 120);
             }
         }
@@ -113,13 +122,13 @@
         .price {
             .price-text {
                 color       : rgb(255, 66, 78);
-                font-size   : 16px;
+                font-size   : 18px !important;
                 font-weight : 500;
                 margin-right: 5px;
             }
 
             .discount {
-                font-size: 10px;
+                font-size: 13px !important;
                 color    : rgb(255, 66, 78);
 
             }

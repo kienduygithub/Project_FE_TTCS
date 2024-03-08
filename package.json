@@ -55,6 +55,8 @@
   },
   "proxy": "http://127.0.0.1:3001",
   "devDependencies": {
+    "bootstrap": "^5.3.3",
+    "react-bootstrap": "^2.10.1",
     "xlsx": "^0.18.5"
   }
 }

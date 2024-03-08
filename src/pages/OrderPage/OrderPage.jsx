@@ -238,7 +238,7 @@ const OrderPage = () => {
                                                 <button style={{ border: 'none', background: 'transparent', cursor: 'pointer' }} onClick={() => handleChangeCount('decrease', order?.productId, order?.amount === 1)}>
                                                     <MinusOutlined style={{ color: '#000', fontSize: '10px' }} />
                                                 </button>
-                                                <InputNumber className='input-count' defaultValue={order?.amount} value={order?.amount} size="small" min={1} max={order?.countInStock}/>
+                                                <InputNumber className='input-count' style={{width: 50}} defaultValue={order?.amount} value={order?.amount} size="small" min={1} max={order?.countInStock}/>
                                                 <button style={{ border: 'none', background: 'transparent', cursor: 'pointer' }} onClick={() => handleChangeCount('increase', order?.productId, order?.amount === order?.countInStock)}>
                                                     <PlusOutlined style={{ color: '#000', fontSize: '10px' }}/>
                                                 </button>

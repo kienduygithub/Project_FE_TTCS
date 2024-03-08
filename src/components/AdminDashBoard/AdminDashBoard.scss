@@ -1,7 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
 .admin-dashboard-container {
-    height: calc(100vh - 69px);
+    height: calc(100vh - 40px);
 
     h1 {
         color    : #000;
@@ -36,7 +36,8 @@
                 gap            : 5px;
 
                 span {
-                    font-size: 14px;
+                    font-size  : 14px;
+                    font-family: 'Lora', serif;
                 }
 
                 // span.anticon-property-safety {
@@ -66,7 +67,8 @@
         width  : 100%;
 
         .order-latest {
-            width: calc(50% - 5px);
+            width : calc(50% - 5px);
+            height: 458px;
         }
 
     }

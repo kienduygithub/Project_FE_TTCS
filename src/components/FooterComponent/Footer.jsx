@@ -43,7 +43,7 @@ const Footer = ({isHiddenFooter}) => {
                                 <i class="fa-brands fa-youtube"></i>
                             </div>
                             <div className="social-icon google">
-                                <i class="fa-brands fa-google"></i>
+                                <i className="fa-brands fa-google"></i>
                             </div>
                         </div>
                     </div>

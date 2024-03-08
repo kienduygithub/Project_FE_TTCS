@@ -2,11 +2,15 @@
 
 .container {
     h1 {
-        color    : #000;
-        font-size: 18px;
-        font-family: 'Lora',
-            serif;
+        color      : #000;
         user-select: none;
+
+        span {
+            font-size: 18px;
+            font-size: 18px;
+            font-family: 'Lora',
+                serif;
+        }
 
         div {
             i.mark-delete {
@@ -31,7 +35,7 @@
     }
 
     .table-container {
-        margin-top: 20px;
+        margin-top: 14px;
         height    : calc(100vh - 161px);
     }
 }

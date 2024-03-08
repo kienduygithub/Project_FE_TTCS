@@ -6,12 +6,12 @@
     background-color: #ccc;
 
     .sign-in-container {
-        width              : 800px;
-        height             : 445px;
-        border-radius      : 8px;
-        background-color   : #fff;
-        display            : flex;
-        // align-items     : center;
+        width           : 800px;
+        height          : 445px;
+        border-radius   : 8px;
+        background-color: #fff;
+        display         : flex;
+        overflow        : hidden;
 
         .container-left {
             width         : 65%;
@@ -20,28 +20,41 @@
             flex-direction: column;
 
             .input {
-                border-top   : none;
-                border-left  : none;
-                border-right : none;
+                // border-top   : none;
+                // border-left  : none;
+                // border-right : none;
+                border-bottom: 1px solid #ccc !important;
                 border-radius: 0px;
-                outline      : none;
-                margin-bottom: 20px;
+                outline      : none !important;
+                margin-bottom: 20px !important;
+                font-size    : 16px !important;
+
             }
 
             input.input:focus {
-                background-color: rgb(232, 240, 254);
+                // background-color: rgb(232, 240, 254) !important;
+                border : 1px solid #ccc !important;
+                outline: none !important;
             }
 
             .input-password {
                 position: relative;
 
                 .text-showhide {
-                    font-size: 14px;
-                    color    : #0d5cb6;
-                    position : absolute;
-                    right    : 5px;
-                    top      : 35%;
+                    font-size: 14px !important;
+                    color    : #0d5cb6 !important;
+                    position : absolute !important;
+                    right    : 0px !important;
+                    top      : 30% !important;
                     transform: translateY(-50%);
+                }
+
+                .text-error {
+                    color    : red;
+                    font-size: 12px;
+                    position : absolute;
+                    bottom   : -20px;
+                    left     : 8px;
                 }
             }
 

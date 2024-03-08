@@ -445,7 +445,7 @@ const AdminProduct = () => {
                 </Button>
             </div>
 {/* Table Data */}
-            <div className="table-container">
+            <div className="table-product-container">
                 <TableComponent  columns={columns} data={dataTable} isLoading={isLoadingProducts} handleDeleteMany={handleDeleteManyProducts}
                     onRow={(record, rowIndex) => {
                         return {

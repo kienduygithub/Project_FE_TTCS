@@ -8,13 +8,14 @@ h3 {
     padding-top: 10px;
     flex-wrap  : nowrap;
     height     : 100%;
+    font-size  : 18px !important;
 
     .type-product-nav {
         background-color: #fff;
-        margin-right    : 10px;
-        padding         : 10px;
-        border-radius   : 8px;
-        height          : fit-content;
+        margin-right    : 10px !important;
+        padding         : 10px !important;
+        border-radius   : 8px !important;
+        height          : fit-content !important;
     }
 
     .type-products {

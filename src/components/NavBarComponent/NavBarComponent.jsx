@@ -60,7 +60,7 @@ const NavBarComponent = (props) => {
     }
     return(
         <div className="nav-background">
-            <div className="nav-container">
+            <div className="navigation-container">
                 <h4 className="nav-label">{ props.label }</h4>
                 <div className="text-value-content">
                     { renderContent(props.type, props.categoris)}

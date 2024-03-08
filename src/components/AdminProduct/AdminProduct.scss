@@ -1,7 +1,8 @@
 .container {
     h1 {
-        color    : #000;
-        font-size: 14px;
+        color      : #000;
+        font-size  : 18px;
+        font-family: 'Lora', serif;
     }
 
     .button {
@@ -17,7 +18,7 @@
         }
     }
 
-    .table-container {
+    .table-product-container {
         margin-top: 20px;
     }
 }

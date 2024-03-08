@@ -104,12 +104,12 @@ const TypeProductPage = () => {
     return(
         <LoadingComponent isLoading={isLoadingType || loading}>
         <div style={{ padding: '0 120px', height: '100%', backgroundColor: '#efefef' }}>
-            <h3 style={{ margin: 0, paddingTop: '10px', fontSize: '14px' }}>
+            <h3 style={{ margin: 0, paddingTop: '10px', fontSize: '16px' }}>
                 <span style={{ cursor: 'pointer' }} onClick={() => navigate('/')}>Trang chủ</span>
                 &gt; Danh mục sản phẩm
             </h3>    
-            <Row className="type-product-row">
-                <Col span={4} className="type-product-nav" style={{marginBottom: '10px'}}>
+            <div className="type-product-row row flex-nowrap" style={{paddingLeft: '10px'}}>
+                <div className="type-product-nav col-2" style={{marginBottom: '10px', fontSize: '100px !important'}}>
                         <NavBarComponent type="text" label={'Danh mục'} categoris={type} page={panigate?.page} limit={panigate?.limit}
                             handleSetProductsNav={handleSetProductsNav}
                         />
@@ -121,8 +121,8 @@ const TypeProductPage = () => {
                             ]}
                             handleSetProductsRangePriceNav={handleSetProductsRangePriceNav}
                         />
-                </Col>
-                <Col span={20} className="type-products">
+                </div>
+                <div className="type-products col-10 row flex-column align-items-center">
                     <div className="product-cards" style={{marginBottom: '15px'}}>
                         { products?.filter((pro) => {
                             if(searchDebounce === ''){
@@ -142,13 +142,13 @@ const TypeProductPage = () => {
                             )
                         })}
                     </div>
-                    <div className="type-product-pagination" style={{marginTop: 'auto', marginBottom: '10px'}}>
+                    <div className="type-product-pagination" style={{marginTop: 'auto', marginBottom: '10px', display: 'flex', justifyContent: 'center'}}>
                         <Pagination defaultCurrent={panigate?.page + 1} current={panigate?.page + 1} total={panigate?.total} onChange={onChange}
                             className="pagination" defaultPageSize={8}
                         />
                     </div>
-                </Col>
-            </Row>
+                </div>
+            </div>
         </div>
         <Footer isHiddenFooter={false}/>    
         </LoadingComponent>

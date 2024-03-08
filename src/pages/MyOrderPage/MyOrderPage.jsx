@@ -91,7 +91,7 @@ const MyOrderPage = () => {
                 Array.isArray(data) && data?.forEach((order) => {
                     newOrderData.push({
                         ...order,
-                        orderItems: JSON.parse(JSON.parse(order?.orderItems)),
+                        orderItems: order.OrderItems,
                         shippingAddress: JSON.parse(JSON.parse(order?.shippingAddress))
                     })
                 })
@@ -123,7 +123,6 @@ const MyOrderPage = () => {
             )
         })
     }
-    // console.log('OOOOOOOOO', orders)
     return (
     <LoadingComponent isLoading={isLoading || isLoadingCancel}>
         <div className='order-background'>    
@@ -142,7 +141,7 @@ const MyOrderPage = () => {
                                             {`${order?.isDelivered ? 'Đã giao hàng' : 'Chưa giao hàng'}`}
                                         </div>
                                         <div>
-                                            <span style={{color: 'rgb(255,66,78)'}}>Thanh toán</span>
+                                            <span style={{color: 'rgb(255,66,78)'}}>Thanh toán: </span>
                                             {`${order?.isPaid ? 'Đã thanh toán' : 'Chưa thanh toán'}`}
                                         </div>
                                     </div>
@@ -152,17 +151,17 @@ const MyOrderPage = () => {
                                             <span style={{ color: 'rgb(255,66,78)' }}>Tổng tiền: </span>
                                             <span style={{fontSize: '13px', color: 'rgb(56, 56, 61)'}}>{ convertPrice(order?.totalPrice)}</span>
                                         </div>
-                                        <div style={{ display: 'flex', gap: '10px' }}>
+                                        <div style={{display: 'flex', gap: '10px'}}>
                                             <ButtonComponent
                                                 onClick={() => handleCancelOrder(order)}
                                                 size={40}
                                                 styleButton={{
                                                     height: '36px',
-                                                    border: '1px solid rgb(11, 116, 229)',
-                                                    borderRadius: '4px'
+                                                    border: order.isPaid ? '1px solid red' : '1px solid rgb(11, 116, 229)',
+                                                    borderRadius: '4px',
                                                 }}
-                                                textButton={'Hủy đơn hàng'}
-                                                styleTextButton={{color: 'rgb(11, 116, 229)', fontSize: '14px'}}
+                                                textButton={order.isPaid ? 'Xóa đơn hàng' : 'Hủy đơn hàng'}
+                                                styleTextButton={{color: order.isPaid ? 'red' : 'rgb(11, 116, 229)', fontSize: '14px'}}
                                             />
                                             <ButtonComponent
                                                 onClick={() => handleDetailsOrder(order?.id)}
